@@ -1,0 +1,36 @@
+<div class="container">
+    <div>
+    <h2>Modifier une Montre :</h2>
+    </div>
+    <form >
+    <div hidden class="col-sm-2 col-md-2 col-lg-2">
+    <label >ID Montre</label>
+    <input readonly  type="text" [(ngModel)]="currentMontre.idMontre"
+    name="idMontre" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4" >
+    <label >Nom Montre</label>
+    <input type="text"[(ngModel)]= "currentMontre.nomMontre"
+    name="nomMontre" class="form-control">
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+    <label >Prix Montre</label>
+    <input type="number" [(ngModel)]= "currentMontre.prixMontre"
+    name="prixMontre" class="form-control">
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <label >categorie Montre</label>
+        <select class="form-control form-control-lg" id="idCat" name="idCat"
+        [(ngModel)]="currentMontre.categorie.idCat">
+        <option *ngFor="let cat of categories" [value]="cat.idCat" >
+        {{cat.nomCat}}
+        </option>
+        </select>
+        </div>
+        
+    <div class="mt-2">
+    <button type="submit" (click)="updateMontre()" class="btn btnsuccess">Modifer</button>
+    </div>
+    </form>
+    </div>
+

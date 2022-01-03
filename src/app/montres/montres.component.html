@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+    <table class="table table-striped">
+    <tr> <th>Id</th><th>Nom</th> <th>Prix</th>
+      <th>Catégorie</th> <th>Operations</th> 
+    
+    </tr>
+    <tbody *ngFor="let montre of montres">
+    <tr >
+    <td>{{montre.idMontre}}</td>
+    <td>{{montre.nomMontre}}</td>
+    <td>{{montre.prixMontre}}  TND</td>
+    
+    <td>{{montre.categorie.nomCat}}</td>  
+    <td><a class="btn btn-danger" (click)="supprimerMontre(montre)">Supprimer</a></td>
+    <td><a class="btn btn-success" [routerLink]="['/updateMontre',montre.idMontre]">Modifier</a></td>
+
+    
+    </tr>
+    </tbody>
+    </table>
+    </div>
